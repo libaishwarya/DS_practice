@@ -31,6 +31,21 @@ class LinkedList():
         while(current.next):
             current = current.next
         return current
+        
+    def previousNode(self,position):
+        current = self.head
+        i = 1
+        while (i<position):
+            current = current.next
+            i = i+1
+        return current
+        
+    def nodeAtPosition(self,data,position):
+        insertNode = Node(data)
+        m = self.previousNode(position)
+        insertNode.next = m.next
+        m.next = insertNode
+        
             
     def printLL(self):
         if self.head is None:
@@ -46,4 +61,7 @@ LL.addAtStart(1)
 LL.addAtStart(10)
 LL.addAtStart(100)
 LL.addAtEnd(50)
+LL.addAtEnd(24)
+
+LL.nodeAtPosition(30,2)
 LL.printLL()
