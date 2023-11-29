@@ -15,15 +15,35 @@ class LinkedList():
             if temp.next is None:
                 temp.data = data
                 temp.next = Node(data)
-        
-    def print_elements(self):
-        if self.head is None:
-            print("linkedlist is empty")
-        else:
-            print("LL exists")
     
+    def addAtStart(self,data):
+        newNode = Node(data)
+        newNode.next = self.head
+        self.head = newNode
+        
+    def addAtEnd(self,data):
+        n=self.findLastNode()
+        endNode = Node(data)
+        n.next = endNode
+        
+    def findLastNode(self):
+        current = self.head
+        while(current.next):
+            current = current.next
+        return current
+            
+    def printLL(self):
+        if self.head is None:
+            print("LL is empty")
+        else:
+            n = self.head
+            while n is not None:
+                print(n.data)
+                n = n.next
 
 LL = LinkedList()
-LL.linkedListIsempty(1)
-
-LL.print_elements()
+LL.addAtStart(1)
+LL.addAtStart(10)
+LL.addAtStart(100)
+LL.addAtEnd(50)
+LL.printLL()
