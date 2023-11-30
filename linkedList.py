@@ -46,7 +46,14 @@ class LinkedList():
         insertNode.next = m.next
         m.next = insertNode
         
-            
+    def findFirstNode(self):
+        current = self.head
+        return current.next
+        
+    def deleteFirstNode(self):
+        m = self.findFirstNode()
+        self.head = m
+        
     def printLL(self):
         if self.head is None:
             print("LL is empty")
@@ -62,6 +69,12 @@ LL.addAtStart(10)
 LL.addAtStart(100)
 LL.addAtEnd(50)
 LL.addAtEnd(24)
-
 LL.nodeAtPosition(30,2)
+
+LL.findFirstNode()
+
 LL.printLL()
+LL.deleteFirstNode()
+
+LL.printLL()
+
