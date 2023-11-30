@@ -53,6 +53,18 @@ class LinkedList():
     def deleteFirstNode(self):
         m = self.findFirstNode()
         self.head = m
+    
+    def lastPreviousNode(self):
+        n = self.head
+        m = self.head.next
+        while m.next:
+            n = n.next
+            m = m.next
+        return n
+    
+    def deleteLastNode(self):
+        n = self.lastPreviousNode()
+        n.next = None
         
     def printLL(self):
         if self.head is None:
@@ -65,16 +77,20 @@ class LinkedList():
 
 LL = LinkedList()
 LL.addAtStart(1)
-LL.addAtStart(10)
-LL.addAtStart(100)
+# LL.addAtStart(10)
+# LL.addAtStart(100)
 LL.addAtEnd(50)
 LL.addAtEnd(24)
-LL.nodeAtPosition(30,2)
-
-LL.findFirstNode()
-
+LL.addAtEnd(74)
+LL.addAtEnd(13)
+LL.addAtEnd(48)
+LL.addAtEnd(62)
+LL.addAtEnd(90)
+# LL.nodeAtPosition(30,2)
+# LL.findFirstNode()
+# LL.printLL()
+# LL.deleteFirstNode()
+# LL.printLL()
+LL.deleteLastNode()
 LL.printLL()
-LL.deleteFirstNode()
-
-LL.printLL()
-
+# LL.lastPreviousNode()
